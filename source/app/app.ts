@@ -9,15 +9,15 @@ import * as firebase from "firebase/app";
 import {
     Inject,
     Injectable,
+    InjectionToken,
     ModuleWithProviders,
-    NgModule,
-    OpaqueToken
+    NgModule
 } from "@angular/core";
 
 import { ThermiteApp } from "firebase-thermite/app";
 
-export const ThermiteAppConfigToken = new OpaqueToken("ThermiteAppConfigToken");
-export const ThermiteAppNameToken = new OpaqueToken("ThermiteAppNameToken");
+export const ThermiteAppConfigToken = new InjectionToken<{ [key: string]: string }>("ThermiteAppConfigToken");
+export const ThermiteAppNameToken = new InjectionToken<string>("ThermiteAppNameToken");
 
 export { ThermiteApp };
 
