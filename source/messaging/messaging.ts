@@ -7,19 +7,20 @@
 import * as firebase from "firebase/app";
 import "firebase/messaging";
 
-import { Injectable } from "@angular/core";
+import { Injectable, NgZone } from "@angular/core";
 import { ThermiteMessaging } from "firebase-thermite/messaging";
 import { ThermiteApp } from "../app";
+import { enterZone } from "../zone";
 
 export { ThermiteMessaging };
 
-function messagingFactory(app: firebase.app.App): ThermiteMessaging {
+function messagingFactory(app: firebase.app.App, ngZone: NgZone): ThermiteMessaging {
 
-    return new ThermiteMessaging(app);
+    return new ThermiteMessaging(app, enterZone(ngZone));
 }
 
 export const ThermiteMessagingProvider = {
-    deps: [ThermiteApp],
+    deps: [ThermiteApp, NgZone],
     provide: ThermiteMessaging,
     useFactory: messagingFactory
 };

@@ -7,19 +7,20 @@
 import * as firebase from "firebase/app";
 import "firebase/storage";
 
-import { Injectable } from "@angular/core";
+import { Injectable, NgZone } from "@angular/core";
 import { ThermiteStorage } from "firebase-thermite/storage";
 import { ThermiteApp } from "../app";
+import { enterZone } from "../zone";
 
 export { ThermiteStorage };
 
-function storageFactory(app: firebase.app.App): ThermiteStorage {
+function storageFactory(app: firebase.app.App, ngZone: NgZone): ThermiteStorage {
 
-    return new ThermiteStorage(app);
+    return new ThermiteStorage(app, enterZone(ngZone));
 }
 
 export const ThermiteStorageProvider = {
-    deps: [ThermiteApp],
+    deps: [ThermiteApp, NgZone],
     provide: ThermiteStorage,
     useFactory: storageFactory
 };

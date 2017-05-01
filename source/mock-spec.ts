@@ -7,6 +7,7 @@
 
 import * as firebase from "firebase/app";
 
+import { NgZone } from "@angular/core";
 import { inject, TestBed } from "@angular/core/testing";
 import { Mock } from "firebase-nightlight";
 import { Composite, User, ValueWithKey } from "firebase-thermite";
@@ -26,6 +27,7 @@ import { ThermiteDatabase, ThermiteDatabaseModule } from "./database";
 import { provideMock } from "./mock";
 import { ThermiteModule } from "./module";
 
+import "rxjs/add/operator/do";
 import "rxjs/add/operator/first";
 import "rxjs/add/operator/take";
 import "rxjs/add/operator/toPromise";
@@ -106,27 +108,32 @@ describe("mock", () => {
 
             it("should support onAuthStateChanged", () => {
 
-                let authStates: User[] = [];
-
-                auth.authState.subscribe(
-                    (user: User) => { authStates.push(user); },
-                    (error: Error) => { throw error; }
-                );
-
                 return app.auth()
                     .signInWithEmailAndPassword("alice@firebase.com", "wonderland")
                     .then(() => {
 
-                        expect(authStates).to.have.length(1);
-                        expect(authStates[0]).to.not.be.null;
-                        expect(authStates[0]).to.have.property("email", "alice@firebase.com");
+                        return auth.authState
+                            .do(() => expect(NgZone.isInAngularZone()).to.be.true)
+                            .first()
+                            .toPromise();
+                    })
+                    .then((user) => {
+
+                        expect(user).to.not.be.null;
+                        expect(user).to.have.property("email", "alice@firebase.com");
 
                         return app.auth().signOut();
                     })
                     .then(() => {
 
-                        expect(authStates).to.have.length(2);
-                        expect(authStates[1]).to.be.null;
+                        return auth.authState
+                            .do(() => expect(NgZone.isInAngularZone()).to.be.true)
+                            .first()
+                            .toPromise();
+                    })
+                    .then((user) => {
+
+                        expect(user).to.be.null;
                     });
             });
         });
@@ -158,6 +165,7 @@ describe("mock", () => {
                     const notifier = new Subject<boolean>();
                     const result = database
                         .infiniteList(ref, notifier, { pageSize: 3 })
+                        .do(() => expect(NgZone.isInAngularZone()).to.be.true)
                         .take(2)
                         .toPromise()
                         .then((values: ValueWithKey[]) => {
@@ -194,6 +202,7 @@ describe("mock", () => {
                     const ref = app.database().ref("data");
                     return database
                         .list(ref)
+                        .do(() => expect(NgZone.isInAngularZone()).to.be.true)
                         .first()
                         .toPromise()
                         .then((values: ValueWithKey[]) => {
@@ -226,6 +235,7 @@ describe("mock", () => {
                     const ref = app.database().ref("data");
                     return database
                         .map(ref)
+                        .do(() => expect(NgZone.isInAngularZone()).to.be.true)
                         .first()
                         .toPromise()
                         .then((value: Composite) => {
@@ -255,6 +265,7 @@ describe("mock", () => {
                     const ref = app.database().ref("data");
                     return database
                         .value(ref)
+                        .do(() => expect(NgZone.isInAngularZone()).to.be.true)
                         .first()
                         .toPromise()
                         .then((value: ValueWithKey) => {

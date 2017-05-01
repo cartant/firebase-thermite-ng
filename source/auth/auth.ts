@@ -7,19 +7,20 @@
 import * as firebase from "firebase/app";
 import "firebase/auth";
 
-import { Injectable } from "@angular/core";
+import { Injectable, NgZone } from "@angular/core";
 import { ThermiteAuth } from "firebase-thermite/auth";
 import { ThermiteApp } from "../app";
+import { enterZone } from "../zone";
 
 export { ThermiteAuth };
 
-function authFactory(app: firebase.app.App): ThermiteAuth {
+function authFactory(app: firebase.app.App, ngZone: NgZone): ThermiteAuth {
 
-    return new ThermiteAuth(app);
+    return new ThermiteAuth(app, enterZone(ngZone));
 }
 
 export const ThermiteAuthProvider = {
-    deps: [ThermiteApp],
+    deps: [ThermiteApp, NgZone],
     provide: ThermiteAuth,
     useFactory: authFactory
 };

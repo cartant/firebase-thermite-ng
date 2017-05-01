@@ -7,19 +7,20 @@
 import * as firebase from "firebase/app";
 import "firebase/database";
 
-import { Injectable } from "@angular/core";
+import { Injectable, NgZone } from "@angular/core";
 import { ThermiteDatabase } from "firebase-thermite/database";
 import { ThermiteApp } from "../app";
+import { enterZone } from "../zone";
 
 export { ThermiteDatabase };
 
-function databaseFactory(app: firebase.app.App): ThermiteDatabase {
+function databaseFactory(app: firebase.app.App, ngZone: NgZone): ThermiteDatabase {
 
-    return new ThermiteDatabase(app);
+    return new ThermiteDatabase(app, enterZone(ngZone));
 }
 
 export const ThermiteDatabaseProvider = {
-    deps: [ThermiteApp],
+    deps: [ThermiteApp, NgZone],
     provide: ThermiteDatabase,
     useFactory: databaseFactory
 };
