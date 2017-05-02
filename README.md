@@ -5,3 +5,23 @@
 [![dependency status](https://img.shields.io/david/cartant/firebase-thermite-ng.svg)](https://david-dm.org/cartant/firebase-thermite-ng)
 [![devDependency Status](https://img.shields.io/david/dev/cartant/firebase-thermite-ng.svg)](https://david-dm.org/cartant/firebase-thermite-ng#info=devDependencies)
 [![peerDependency Status](https://img.shields.io/david/peer/cartant/firebase-thermite-ng.svg)](https://david-dm.org/cartant/firebase-thermite-ng#info=peerDependencies)
+
+### What is it?
+
+`firebase-thermite-ng` is ...
+
+### Why might I need it?
+
+...
+
+### How does it differ from AngularFire2?
+
+...
+
+## Install
+
+...
+
+## API
+
+...
