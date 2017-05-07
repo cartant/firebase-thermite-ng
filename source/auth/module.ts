@@ -4,8 +4,6 @@
  * found in the LICENSE file at https://github.com/cartant/firebase-thermite-ng
  */
 
-import "firebase/auth";
-
 import { NgModule } from "@angular/core";
 import { ThermiteAppModule } from "../app";
 import { ThermiteAuthProvider } from "./auth";

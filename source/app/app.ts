@@ -4,6 +4,8 @@
  * found in the LICENSE file at https://github.com/cartant/firebase-thermite-ng
  */
 
+import * as firebase from "firebase/app";
+
 import {
     Inject,
     Injectable,
@@ -13,7 +15,6 @@ import {
 } from "@angular/core";
 
 import { ThermiteApp } from "firebase-thermite/app";
-import { firebase } from "../firebase";
 
 export const ThermiteAppConfigToken = new InjectionToken<{ [key: string]: string }>("ThermiteAppConfigToken");
 export const ThermiteAppNameToken = new InjectionToken<string>("ThermiteAppNameToken");
