@@ -5,13 +5,12 @@
  */
 /*tslint:disable:no-unused-expression*/
 
-import * as firebase from "firebase";
-
 import { inject, TestBed } from "@angular/core/testing";
 import { expect } from "chai";
 import { ThermiteApp } from "../app";
 import { ThermiteAuth } from "./auth";
 import { timeout } from "../constants-spec";
+import { firebase } from "../firebase";
 import { app } from "../firebase-spec";
 import { ThermiteAuthModule } from "./module";
 

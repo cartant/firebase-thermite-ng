@@ -4,11 +4,10 @@
  * found in the LICENSE file at https://github.com/cartant/firebase-thermite-ng
  */
 
-import * as firebase from "firebase";
-
 import { Injectable, NgZone } from "@angular/core";
 import { ThermiteAuth } from "firebase-thermite/auth";
 import { ThermiteApp } from "../app";
+import { firebase } from "../firebase";
 import { enterZone } from "../zone";
 
 export { ThermiteAuth };
