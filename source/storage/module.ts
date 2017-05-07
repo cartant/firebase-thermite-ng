@@ -4,6 +4,8 @@
  * found in the LICENSE file at https://github.com/cartant/firebase-thermite-ng
  */
 
+import "firebase/storage";
+
 import { NgModule } from "@angular/core";
 import { ThermiteAppModule } from "../app";
 import { ThermiteStorageProvider } from "./storage";

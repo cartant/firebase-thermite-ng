@@ -5,7 +5,7 @@
  */
 /*tslint:disable:no-unused-expression*/
 
-import * as firebase from "firebase/app";
+import * as firebase from "firebase";
 
 import { NgZone } from "@angular/core";
 import { inject, TestBed } from "@angular/core/testing";
