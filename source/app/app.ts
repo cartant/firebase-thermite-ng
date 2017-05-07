@@ -37,7 +37,7 @@ export function appFactory(
     } catch (error) {
         // tslint:disable-next-line
         console.log(error);
-        app = firebase.app(null);
+        app = firebase.app();
     }
     return new ThermiteApp(app);
 }
