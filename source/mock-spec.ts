@@ -10,7 +10,7 @@ import * as firebase from "firebase/app";
 import { NgZone } from "@angular/core";
 import { inject, TestBed } from "@angular/core/testing";
 import { Mock } from "firebase-nightlight";
-import { Composite, User, ValueWithKey } from "firebase-thermite";
+import { CompositeValue, KeyedValue, User } from "firebase-thermite";
 import { Subject } from "rxjs/Subject";
 import { expect } from "chai";
 import { ThermiteApp, ThermiteAppConfigToken, ThermiteAppModule } from "./app";
@@ -168,12 +168,12 @@ describe("mock", () => {
                         .do(() => expect(NgZone.isInAngularZone()).to.be.true)
                         .take(2)
                         .toPromise()
-                        .then((values: ValueWithKey[]) => {
+                        .then((values: KeyedValue[]) => {
 
                             expect(values).to.be.an("array");
                             expect(values).to.have.length(6);
 
-                            values.forEach((element: ValueWithKey) => {
+                            values.forEach((element: KeyedValue) => {
 
                                 expect(element).to.have.property("$key");
                                 expect(element).to.have.property("$value", mockDatabase.content.data[element.$key]);
@@ -205,12 +205,12 @@ describe("mock", () => {
                         .do(() => expect(NgZone.isInAngularZone()).to.be.true)
                         .first()
                         .toPromise()
-                        .then((values: ValueWithKey[]) => {
+                        .then((values: KeyedValue[]) => {
 
                             expect(values).to.be.an("array");
                             expect(values).to.have.length(3);
 
-                            values.forEach((element: ValueWithKey) => {
+                            values.forEach((element: KeyedValue) => {
 
                                 expect(element).to.have.property("$key");
                                 expect(element).to.have.property("$value", mockDatabase.content.data[element.$key]);
@@ -238,7 +238,7 @@ describe("mock", () => {
                         .do(() => expect(NgZone.isInAngularZone()).to.be.true)
                         .first()
                         .toPromise()
-                        .then((value: Composite) => {
+                        .then((value: CompositeValue) => {
 
                             expect(value).to.be.an("object");
                             expect(value).to.have.property("alice");
@@ -268,11 +268,10 @@ describe("mock", () => {
                         .do(() => expect(NgZone.isInAngularZone()).to.be.true)
                         .first()
                         .toPromise()
-                        .then((value: ValueWithKey) => {
+                        .then((value) => {
 
                             expect(value).to.be.an("object");
                             expect(value).to.deep.equal({
-                                $key: "data",
                                 alice: true,
                                 bob: true,
                                 mallory: true
