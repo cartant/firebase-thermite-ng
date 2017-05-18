@@ -41,8 +41,18 @@ describe("auth", function (): void {
         expect(auth).to.have.property("authState");
     });
 
+    it("should expose idToken", () => {
+
+        expect(auth).to.have.property("idToken");
+    });
+
     it("should implement onAuthStateChanged", () => {
 
         expect(auth).to.respondTo("onAuthStateChanged");
+    });
+
+    it("should implement onIdTokenChanged", () => {
+
+        expect(auth).to.respondTo("onIdTokenChanged");
     });
 });

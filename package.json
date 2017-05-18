@@ -19,9 +19,9 @@
     "cpy-cli": "^1.0.1",
     "env-cmd": "^5.1.0",
     "eslint": "^3.19.0",
-    "firebase": "^3.0.0",
-    "firebase-nightlight": "^1.0.0",
-    "firebase-thermite": "^1.0.0",
+    "firebase": "^4.0.0",
+    "firebase-nightlight": "^2.0.0",
+    "firebase-thermite": "^2.0.0",
     "geofire": "^4.1.2",
     "glob": "^7.1.1",
     "karma": "^1.6.0",
@@ -57,8 +57,8 @@
   "optionalDependencies": {},
   "peerDependencies": {
     "@angular/core": "^4.0.0",
-    "firebase": "^3.0.0",
-    "firebase-thermite": "^1.0.0",
+    "firebase": "^4.0.0",
+    "firebase-thermite": "^2.0.0",
     "rxjs": "^5.3.0"
   },
   "private": true,
