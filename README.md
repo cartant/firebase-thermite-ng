@@ -10,7 +10,7 @@
 
 `firebase-thermite-ng` contains the Angular modules for `firebase-thermite` - a library of RxJS observables for Firebase.
 
-### Why might I need it?
+### Why might you need it?
 
 You might need it if the official Angular library for Firebase - [AngularFire2](https://github.com/angular/angularfire2) - does not suit your requirements.
 
