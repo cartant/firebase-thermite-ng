@@ -19,7 +19,7 @@
     "cpy-cli": "^1.0.1",
     "env-cmd": "^6.0.0",
     "eslint": "^4.0.0",
-    "firebase": "^4.0.0",
+    "firebase": "~4.4.0",
     "firebase-nightlight": "^2.0.0",
     "firebase-thermite": "^2.0.0",
     "geofire": "^4.1.2",
@@ -38,7 +38,7 @@
     "rxjs-tslint-rules": "^3.0.0",
     "tslib": "^1.6.1",
     "tslint": "^5.1.0",
-    "typescript": "^2.5.2 <2.6.0",
+    "typescript": "~2.5.2",
     "uglify-js": "^3.0.10",
     "zone.js": "^0.8.9"
   },
@@ -57,7 +57,7 @@
   "optionalDependencies": {},
   "peerDependencies": {
     "@angular/core": "^4.0.0",
-    "firebase": "^4.0.0",
+    "firebase": "~4.4.0",
     "firebase-thermite": "^2.0.0",
     "rxjs": "^5.3.0"
   },
