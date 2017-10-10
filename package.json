@@ -19,7 +19,7 @@
     "cpy-cli": "^1.0.1",
     "env-cmd": "^7.0.0",
     "eslint": "^4.0.0",
-    "firebase": "~4.4.0",
+    "firebase": "~4.5.0",
     "firebase-nightlight": "^2.0.0",
     "firebase-thermite": "^2.0.0",
     "geofire": "^4.1.2",
@@ -57,7 +57,7 @@
   "optionalDependencies": {},
   "peerDependencies": {
     "@angular/core": "^4.0.0",
-    "firebase": "~4.4.0",
+    "firebase": "~4.5.0",
     "firebase-thermite": "^2.0.0",
     "rxjs": "^5.3.0"
   },
