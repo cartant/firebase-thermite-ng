@@ -1066,7 +1066,7 @@ firebase-thermite@^2.0.0:
   version "2.0.7"
   resolved "https://registry.yarnpkg.com/firebase-thermite/-/firebase-thermite-2.0.7.tgz#3dfad07f78382d5a7b6a9b9b073719ac39ccd288"
 
-firebase@~4.6.0:
+firebase@^4.0.0:
   version "4.6.2"
   resolved "https://registry.yarnpkg.com/firebase/-/firebase-4.6.2.tgz#d4d983d975b98ee27588b25791238a1a1e01a71d"
   dependencies:
