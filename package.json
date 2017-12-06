@@ -10,7 +10,7 @@
     "@angular/compiler": "^4.1.0",
     "@angular/core": "^4.1.0",
     "@angular/platform-browser": "^4.1.0",
-    "@angular/platform-browser-dynamic": "^4.1.0",
+    "@angular/platform-browser-dynamic": "^5.1.0",
     "@types/chai": "^4.0.0",
     "@types/mocha": "^2.2.41",
     "@types/node": "^8.0.0",
