@@ -19,7 +19,7 @@
     "cpy-cli": "^1.0.1",
     "env-cmd": "^7.0.0",
     "eslint": "^4.0.0",
-    "firebase": "^4.0.0",
+    "firebase": "^5.0.4",
     "firebase-nightlight": "^3.0.0",
     "firebase-thermite": "^2.0.0",
     "geofire": "^4.1.2",
