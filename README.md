@@ -5,7 +5,6 @@
 [![dependency status](https://img.shields.io/david/cartant/firebase-thermite-ng.svg)](https://david-dm.org/cartant/firebase-thermite-ng)
 [![devDependency Status](https://img.shields.io/david/dev/cartant/firebase-thermite-ng.svg)](https://david-dm.org/cartant/firebase-thermite-ng#info=devDependencies)
 [![peerDependency Status](https://img.shields.io/david/peer/cartant/firebase-thermite-ng.svg)](https://david-dm.org/cartant/firebase-thermite-ng#info=peerDependencies)
-[![Greenkeeper badge](https://badges.greenkeeper.io/cartant/firebase-thermite-ng.svg)](https://greenkeeper.io/)
 
 ### What is it?
 
